@@ -1,0 +1,253 @@
+@font-face {
+    font-family: 'huset';
+    src: url(font/HUSET_Regular.otf);
+    font-family: 'avenir';
+    src: url(font/Avenir.ttc);
+    font-family: 'avenir_next';
+    src: url(font/Avenir_Next.ttc);
+}
+html, body {
+    min-height: 100%;
+}
+body {
+	margin: 0;
+	background-color: coral;
+	background: linear-gradient(45deg, #FF8E8E, #F5A94C, #EFCE47, #F5A94C, #FF8E8E);
+    font-family: 'avenir';
+    color: white;
+}
+
+/******** BURGER MENU *********/
+
+#logo {
+    width: 55px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.appbar {
+    z-index: 99999;
+    width: 100vw;
+    height: 80px;
+    top: 0;
+    left:0;
+    background-color: rgba(255, 255, 255, 1);
+    transition: all 0.6s;
+}
+.shadow {
+    box-shadow: 0px 3px 6px rgba(68,68,68,0.2);
+}
+.appbar, .menu {
+    position: fixed;
+}
+.menu {
+    height: 130px;
+    width: 100vw;
+    margin-top: 80px;
+    transition: all 0.6s;
+    color: white;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 3px 6px rgba(68,68,68,0.2);
+}
+.menu.hidden {
+    transform: translateY(-100vh);
+}
+ul li a{
+    color: #ff8e8e;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 30px;
+}
+
+.menuIcon {
+    width: 45px;
+    margin-top: 18px;
+    margin-left: 18px;
+    position: absolute;
+    left: 0;
+}
+.menuIcon {
+  transition: all 0.7s;
+}
+.menuIcon.rotate {
+  transform: rotate(-180deg);
+}
+
+/******** CONTENT ********/
+#toptitle {
+    width: 56vw;
+    margin: 110px 22vw 0px 22vw;
+}
+.film {
+    border: 2pt solid white;
+    margin: 4vw 8vw 8vw;
+    padding: 4vw;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: grid;
+    grid-template-columns: 4fr 3fr;
+    grid-template-rows: 6(auto);
+    grid-column-gap: 20px;
+}
+h1 {
+    font-family: 'avenir';
+    letter-spacing: 4px;
+    color: white;
+    font-size: 24pt;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    grid-column: 1/-1;
+    grid-row: 1;
+}
+h2 {
+    font-family: 'avenir';
+    color: white;
+    font-size: 16pt;
+}
+h3 {
+    font-family: 'avenir';
+    color: white;
+    grid-column: 1;
+    margin: 0;
+}
+img {
+    width: 100%;
+    grid-column: 1/-1;
+    grid-row: 2;
+}
+.venue, .price {
+    grid-row: 3;
+    margin: 10px 0 10px 0;
+}
+.price, .genre,.director {
+    text-align: right;
+}
+.genre, .director {
+    margin: 0;
+}
+.date,.genre {
+    grid-row: 4;
+    margin: 0;
+}
+.time,.director {
+    grid-row: 5;
+    margin: 0 0 10px 0;
+}
+.readmore {
+    grid-row: 6;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+p {
+    margin: 0;
+}
+.descript {
+    grid-column: 1/-1;
+    grid-row: 6;
+    margin: 20px 0 0 0;
+    font-size: 11pt;
+}
+iframe{
+    width: 100%;
+    height: 50vw;
+    margin-top: 20px;
+}
+
+/********* SUBPAGE **********/
+
+.subpageTitle {
+    margin-top: 70px;
+}
+
+/********** FOOTER **********/
+
+footer {
+    margin: 0 0 6px 6px;
+    font-size: 8pt;
+}
+
+/*********LOADER**********/
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.dot {
+	width: 10px;
+	height: 10px;
+	border: 2px solid white;
+	border-radius: 50%;
+	float: left;
+	margin: 0 5px;
+    animation: fx 1.8s ease infinite;
+}
+
+#d1 {
+    animation-delay: 0s;
+}
+
+#d2 {
+    animation-delay: 0.2s;
+}
+
+#d3 {
+    animation-delay: 0.4s;
+}
+
+@keyframes fx {
+    0% {
+        transform: scale(0);
+		opacity: 0;
+	}
+    40% {
+		transform: scale(1);
+		opacity: 1;
+	}
+    80% {
+		transform: scale(0);
+		opacity: 0;
+	}
+	100% {
+        transform: scale(0);
+		opacity: 0;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+    #filmlist {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 3vw;
+        margin: 3vw;
+    }
+    .film {
+        margin: 0;
+    }
+    #toptitle {
+        width: 36vw;
+        margin: 110px 32vw 0px 32vw;
+    }
+    #singleFilm {
+        margin: 70px 16vw 50px 16vw;
+    }
+    iframe{
+        height: 40vw;
+    }
+}
+
+@media only screen and (min-width: 1224px) {
+    #filmlist {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    #singleFilm {
+        margin: 70px 26vw 50px 26vw;
+    }
+    iframe{
+        height: 26vw;
+    }
+}
